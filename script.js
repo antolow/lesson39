@@ -1,18 +1,35 @@
-let myForm = document.forms.myForm;
-let elements = myForm.elements;
-let result = document.querySelector('.result');
-let btn = elements.btn;
+let text = document.querySelector("#text");
+let sum = elements.sum;
+let el= elements.myForm;
+let addText = elements.addText;
+let userName = document.querySelector("#name");
+let surName = document.querySelector("#surname");
+let secondName = document.querySelector("#secondName");
+let myForm = document.querySelector("#myForm");
+let quest = elements.quest;
 let str = elements.str;
+let count = elements.count;
 
-btn.addEventListener('click', (evt) => {
+quest.addEventListener('click', function (evt) {
     evt.preventDefault();
-    let masString = str.value.split('');
-    result.append(masString);
-    console.log(masString)
+    let arr = str.value.split(' ');
+    surName.append(arr[0])
+    userName.append(arr[2])
+    secondName.append(arr[3])
 
-    let masNum = []
-    length = masString.length
-    for (let i = 0; i < length; i++)
-    masNum.push(parseInt(masString[i]));
-    console.log(masNum)
 })
+
+addText.addEventListener('click', function(evt) {
+    evt.preventDefault();
+    text.append(`${myForm.value}`)
+    
+})
+ 
+count.addEventListener('click', function (evt) {
+ evt.preventDefault();
+    str.value('');
+
+console.log('str')
+})
+
+
